@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
-//import Header from './components/Header';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import StatefullCamp from './StatefullCamp';
+// import SingleCamp from './SingleCamp';
+import Students from './Students';
+// import SingleStudent from './SingleStudent';
+import Header from './Header';
 
+export default class Main extends Component {
 
-export default class Main extends Component{
     render(){
         return (
-            <div>
-            <h1> Hello React!</h1>
+           <Router>
+            <div>               
+               <div className="nav">
+                   <Header />
+               </div>
+               <div>
+                   <Switch>
+                       <Route exact path="/campus" component={StatefullCamp} />
+                       {/* <Route path="/campus/:campId" component={SingleCamp} />*/}
+                       <Route exact path="/students" component={Students} />
+                        {/* <Route path="/students/:stuId" component={SingleStudent} /> */}
+                       <Route component={StatefullCamp} />
+                   </Switch>
+               </div>
             </div>
-        )
+           </Router> 
+        );
     }
 }

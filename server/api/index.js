@@ -30,7 +30,9 @@ apiRouter.param('id', (req,res,next,id)=>{ //campus middleware
 });
 
 apiRouter.get('/campus', (req,res,next)=>{
-	Campus.findAll()
+	Campus.findAll({
+		include:[{model:Students}]
+	})
 	.then((result)=>{
 		res.send(result)
 	})
@@ -66,7 +68,9 @@ apiRouter.delete('/campus/:id', (req,res,next)=>{
  //------------------Student Routes-------------------------
 
 apiRouter.get('/student', (req,res,next)=>{
-	Student.findAll()
+	Student.findAll({
+		include:[{model:Campus}]
+	})
 	.then((result)=>{
 		res.send(result)
 	})

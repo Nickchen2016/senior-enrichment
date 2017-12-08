@@ -12,8 +12,7 @@ import Root from './components/Root'
 render (
   <Provider store={store}>
   <div>
-    <Main />,
-    <Header />
+    <Main />
   </div>
   </Provider>,
   document.getElementById('main')
