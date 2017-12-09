@@ -14,8 +14,19 @@ const Campus = db.Campus
 // You can put all routes in this file; HOWEVER, this file should almost be like a table of contents for the routers you create
 
 //------------------Campus Routes-------------------------
+
+apiRouter.get('/campus', (req,res,next)=>{
+	Campus.findAll({
+		include:[{model:Student}]
+	})
+	.then((result)=>{
+		res.send(result)
+	})
+	.catch(next)
+})
+
 apiRouter.param('id', (req,res,next,id)=>{ //campus middleware
-	Campus.findById(id)
+	Campus.scope('stuId').findById(id)
 	.then(campus=>{
 		if(campus){
 			req.campus = campus;
@@ -29,18 +40,8 @@ apiRouter.param('id', (req,res,next,id)=>{ //campus middleware
 	.catch(next);
 });
 
-apiRouter.get('/campus', (req,res,next)=>{
-	Campus.findAll({
-		include:[{model:Students}]
-	})
-	.then((result)=>{
-		res.send(result)
-	})
-	.catch(next)
-})
-
 apiRouter.get('/campus/:id', (req,res,next)=>{
-		res.send(req.campus)
+		res.send(req.campus);
 })
 
 apiRouter.post('/campus', (req,res,next)=>{

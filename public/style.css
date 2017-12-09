@@ -117,3 +117,18 @@ a {
 a:hover {
     color: rgb(172, 172, 172)
 }
+
+.single-camp {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex:1;
+    background-color: red;
+}
+
+.right {
+    flex:1;
+    background-color: green;
+}
