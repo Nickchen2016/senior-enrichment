@@ -1,6 +1,7 @@
 'use strict';
 const Sequelize = require('sequelize');
 const db = require('../index');
+const Student = require('./student');
 
 
 
@@ -18,4 +19,10 @@ module.exports = db.define('campus', {
 		defaultValue: '',
 	},
 	description: {type:Sequelize.TEXT}
+},{
+	scopes: {
+		students:{
+			include:[{model:Student}]
+		}
+	  }
 })

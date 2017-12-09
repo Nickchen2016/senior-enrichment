@@ -1,7 +1,7 @@
 'use strict'
 const express = require('express');
 const apiRouter = require('express').Router()
-const db = require('../db/models')
+const db = require('../db/models/index')
 const Student = db.Student
 const Campus = db.Campus
 
@@ -26,7 +26,7 @@ apiRouter.get('/campus', (req,res,next)=>{
 })
 
 apiRouter.param('id', (req,res,next,id)=>{ //campus middleware
-	Campus.scope('stuId').findById(id)
+	Campus.scope('students').findById(id)
 	.then(campus=>{
 		if(campus){
 			req.campus = campus;
@@ -68,6 +68,8 @@ apiRouter.delete('/campus/:id', (req,res,next)=>{
 
  //------------------Student Routes-------------------------
 
+
+
 apiRouter.get('/student', (req,res,next)=>{
 	Student.findAll({
 		include:[{model:Campus}]
@@ -77,6 +79,10 @@ apiRouter.get('/student', (req,res,next)=>{
 	})
 	.catch(next)
 })
+
+// apiRouter.params('id', (req,res,next,id)=>{
+// 	Students.scope('')
+// })
 
 apiRouter.get('/student/:id', (req,res,next)=>{
 	Student.findById(req.params.id)

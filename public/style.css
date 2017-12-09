@@ -48,7 +48,7 @@ h4 {
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
-    margin: 180px 20px 180px 20px
+    margin: 180px 20px 80px 20px
 }
 
 .school {
@@ -66,7 +66,7 @@ img {
 }
 
 .studentsList {
-    margin: 150px 0px 200px 0px;
+    margin: 150px 0px 150px 0px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -125,10 +125,10 @@ a:hover {
 
 .left {
     flex:1;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .right {
     flex:1;
-    background-color: green;
+    /* background-color: green; */
 }

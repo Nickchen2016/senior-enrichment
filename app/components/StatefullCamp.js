@@ -7,10 +7,13 @@ export default class StatefullCamp extends Component{
     constructor(){
         super();
         this.state = {
-            campuses: []
+            campuses: [],
+            inputValue: {}
         };
     }
 
+
+    
 componentDidMount (){
     axios.get('/api/campus')
     .then(res => res.data)

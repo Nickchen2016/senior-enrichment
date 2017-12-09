@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class Students extends Component {
@@ -38,6 +38,7 @@ export default class Students extends Component {
 
                {students.map(student=>{
                  return(
+                    <Link to={`/students/${studentId}`}>
                     <div className="list-title-1" key={student.id}>
                         <div className="list-topic-1 stu2">{student.id}</div>
                         <div className="list-topic-1">{student.name}</div>
@@ -45,6 +46,7 @@ export default class Students extends Component {
                         <div className="list-topic-1">{student.gpa}</div>
                         <div className="list-topic-1">{student.email}</div>
                     </div>
+                    </Link>
                  )
                })}
             </div>

@@ -19,7 +19,7 @@ export default class SingleCamp extends Component {
 
     render () {
         const campus = this.state.campus;
-        console.log(this.state.campus)
+        const students = this.state.campus.students;
 
         return (
             <div className="single-camp">
@@ -35,11 +35,23 @@ export default class SingleCamp extends Component {
                     <div className="list-title">
                         <div className="list-topic stu1"><h3>ID</h3></div>
                         <div className="list-topic"><h3>Students Name</h3></div>
-                        <div className="list-topic"><h3>Campus</h3></div>
                         <div className="list-topic"><h3>GPA</h3></div>
                         <div className="list-topic"><h3>Email</h3></div>
                     </div>
-                  
+                    <div>
+
+                    {   students && students.map(student => {
+                            return(
+                                <div className="list-title-1" key={student.id}>
+                                <div className="list-topic-1 stu2">{student.id}</div>
+                                <div className="list-topic-1">{student.name}</div>
+                                <div className="list-topic-1">{student.gpa}</div>
+                                <div className="list-topic-1">{student.email}</div>
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
                 </div>
             </div>
         )
