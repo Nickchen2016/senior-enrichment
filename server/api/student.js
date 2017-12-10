@@ -1,7 +1,6 @@
 const apiRouter = require('express').Router()
-const db = require('../db/models/index')
-const Student = db.Student
-
+const Student = require('../db/models/student')
+const Campus = require('../db/models/campus')
 
 //------------------Student Routes-------------------------
 
