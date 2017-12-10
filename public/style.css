@@ -9,6 +9,7 @@ body {
     background-color: white;
 }
 
+label,
 h2 {
     font-size: 30px;
     font-weight: normal;
@@ -109,10 +110,11 @@ img {
 }
 
 a {
-    color: white;
+    color:white;
     cursor: auto;
     text-decoration: none;
 }
+
 
 a:hover {
     color: rgb(172, 172, 172)
@@ -131,4 +133,12 @@ a:hover {
 .right {
     flex:1;
     /* background-color: green; */
+}
+
+#add-camp {
+    margin: 180px 20px 80px 20px
+}
+
+.camps-title {
+    margin: 180px 20px 80px 20px
 }

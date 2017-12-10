@@ -7,7 +7,15 @@ export default class SingleCamp extends Component {
         this.state = {
             campus : {}
         };
+        this.handleClick = this.handleClick.bind(this);
     }
+
+    handleClick(){
+        const campusId = this.props.match.params.campusId;
+        
+        axios.delete(`/api/campus/${campusId}`);
+        
+      }
 
     componentDidMount () {
         const campusId = this.props.match.params.campusId;
@@ -28,6 +36,12 @@ export default class SingleCamp extends Component {
                     <div className = "camp-value">
                         <h4>{campus.name}</h4>
                         <h4>{campus.description}</h4>
+                    </div>
+                    <div>
+                        <button
+                        type="delete"
+                        onClick={this.handleClick}
+                        >-</button>
                     </div>
                 </div>
                 <div className="right">
