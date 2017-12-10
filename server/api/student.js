@@ -16,7 +16,10 @@ apiRouter.get('/', (req,res,next)=>{
 })
 
 apiRouter.param('id', (req,res,next,id)=>{
-	Student.findById(id)
+	Student.findAll({
+		where:{id},
+		include:[{model:Campus}]
+	})
 	.then(student => {
 		if(student) {
 			req.student = student;
