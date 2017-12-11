@@ -17,6 +17,7 @@ export default class Campusese extends Component{
     this.imgChange = this.imgChange.bind(this);
     this.desChange = this.desChange.bind(this); 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.addCampus = this.addCampus.bind(this);
     }
     
 componentDidMount (){
@@ -45,17 +46,23 @@ desChange(event){
 }
 
 handleSubmit(event){
-  event.preventDefault();
-  axios.post('/api/campus',{name: this.state.name,
-                            imageUrl: this.state.imageUrl,
-                            description: this.state.description})
-  
-  this.setState({
-    name: '',
-    imageUrl: '',
-    description: '',
-    isDirty: true
-  });
+    event.preventDefault();
+    this.addCampus({name: this.state.name,
+                    imageUrl: this.state.imageUrl,
+                    description: this.state.description})
+    
+    this.setState({
+      name: '',
+      imageUrl: '',
+      description: '',
+      isDirty: false
+    });
+  }
+
+addCampus(newCampus){
+    axios.post('/api/campus', newCampus)
+    .then(res => res.data)
+    .then(campus => this.setState({ campuses:[...this.state.campuses, campus] }));
 }
 
     render (){
@@ -83,7 +90,7 @@ handleSubmit(event){
             </div>
 
             <div id="add-camp">
-                <label>Create New Campus </label>
+                <h1>Create New Campus </h1>
                 <form className="school-info" onSubmit={this.handleSubmit}>
                     <div className="input-titles">
                         <input 

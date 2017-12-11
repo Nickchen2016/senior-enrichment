@@ -13,13 +13,14 @@ export default class Students extends Component {
     componentDidMount(){
         axios.get('/api/student')
         .then(res => res.data)
-        .then(students => this.setState({students}));
+        .then(students => this.setState({students: students}));
 
     }
 
     render(){
-
+        
         const students = this.state.students;
+        
         return(
         <div className="studentsList">
             <div className="name">
@@ -35,11 +36,11 @@ export default class Students extends Component {
                     <div className="list-topic"><h3>Email</h3></div>
                 </div>
 
-               {students.map(student=>{
+               { students && students.map(student=>{
                  return(
                      <div key={student.id}>
                     <Link to={`/students/${student.id}`}>
-                    <div className="list-title-1" key={student.id}>
+                    <div className="list-title-1" >
                         <div className="list-topic-1 stu2">{student.id}</div>
                         <div className="list-topic-1">{student.name}</div>
                         <div className="list-topic-1">{student.campus.name}</div>
@@ -48,6 +49,7 @@ export default class Students extends Component {
                     </div>
                     </Link>
                     </div>
+                    // <div>{console.log('---------', student.campus.name)}</div>
                  )
                })}
             </div>

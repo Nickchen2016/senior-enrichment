@@ -9,14 +9,18 @@ body {
     background-color: white;
 }
 
-label,
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
 h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: normal;
     padding-left: 20px;
 }
 
-h3 {
+h3 {font-size: 30px;
     font-weight: normal;
     padding: 20px 0px 15px 0px;
     
@@ -27,7 +31,8 @@ span {
 
 h4 {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 25px;
+    color: grey;
 }
 
 #navBar {
@@ -49,7 +54,7 @@ h4 {
     display: flex;
     flex-wrap:wrap;
     justify-content: center;
-    margin: 180px 20px 80px 20px
+    margin: 20px 20px 80px 20px
 }
 
 .school {
@@ -61,8 +66,8 @@ h4 {
     margin: 20px 20px 5px 20px;
 }
 img {
-    height: 500px;
-    width: 900px;
+    height: 600px;
+    width: 1000px;
     margin: 30px 30px 10px 30px
 }
 
@@ -84,18 +89,20 @@ img {
 
 .list-topic {
     flex-basis: 250px;
-    flex:5;
+    flex:3;
     margin: 10px 0px 5px 0px
 }
 
-.stu1{
+/* .stu1{
     flex:1
-}
+} */
 
 .list-topic-1 {
+    font-size: 25px;
     flex-basis: 250px;
     flex:5;
-    margin: 20px 0px 40px 0px
+    margin: 20px 0px 5px 0px
+    /* margin: 20px 0px 40px 0px */
 }
 
 .list-title-1 {
@@ -105,9 +112,9 @@ img {
     margin-top: 30px
 }
 
-.stu2{
+/* .stu2{
     flex:1
-}
+} */
 
 a {
     color:white;
@@ -123,22 +130,71 @@ a:hover {
 .single-camp {
     display: flex;
     flex-wrap: wrap;
+    margin: 180px 20px 0px 80px
 }
 
 .left {
     flex:1;
-    /* background-color: red; */
 }
 
 .right {
     flex:1;
-    /* background-color: green; */
+    margin-right: 80px
 }
 
 #add-camp {
-    margin: 180px 20px 80px 20px
+    margin: 50px 120px 180px 220px
 }
 
 .camps-title {
-    margin: 180px 20px 80px 20px
+    margin: 180px 20px 0px 220px
+}
+
+.camp-value {
+    margin-left : 30px;
+}
+
+#stu-name {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+input[type=text]{
+    width: 500px;
+    padding: 12px 20px;
+    margin: 15px;
+    font-size: 30px;
+}
+
+.submit-input { 
+    width: 3%;
+    padding: 12px 12px;
+    margin: 15px;
+    font-size: 30px;
+    border-radius: 8px;
+}
+
+.button1{
+    width: 18%;
+    padding: 12px 12px;
+    margin: 15px;
+    font-size: 30px;
+    color: white;
+    background-color:rgb(0, 218, 134);
+    border: none;
+    border-radius: 8px;
+}
+.button2{
+    width: 18%;
+    padding: 12px 12px;
+    margin: 15px;
+    font-size: 30px;
+    color: white;
+    background-color:rgb(255, 81, 0);
+    border: none;
+    border-radius: 8px;
+}
+
+.stu-value {
+    margin-left: 300px;
 }
