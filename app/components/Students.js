@@ -7,6 +7,7 @@ export default class Students extends Component {
         super();
         this.state = {
             students : [],
+            campuses: [],
             firstName:'',
             lastName:'',
             email:'',
@@ -27,7 +28,9 @@ export default class Students extends Component {
         axios.get('/api/student')
         .then(res => res.data)
         .then(students => this.setState({students}));
-
+        axios.get('/api/campus')
+        .then(res => res.data)
+        .then(campuses => this.setState({campuses}));
     }
 
     firstNameChange(event){
@@ -90,9 +93,8 @@ export default class Students extends Component {
     
 
     render(){
-        
         const students = this.state.students;
-        
+        const campuses = this.state.campuses;
         return(
         <div className="studentsList">
             <div className="name">
@@ -162,11 +164,11 @@ export default class Students extends Component {
                         />
                         
                         <select onChange={this.campusChange} className="campuses">
-                        { students && students.map(student=>{
+                        { campuses && campuses.map(campus=>{
                             return(
                                 <option 
-                                key={student.id}
-                                value={student.campusId}>{student.campus.name}
+                                key={campus.id}
+                                value={campus.id}>{campus.name}
                                 </option>
                                 
                             )})}
