@@ -8,7 +8,7 @@ export default class Header extends Component {
             <div id= "navBar">
                 <div className="title">
                     <h2>
-                        <Link to="/campus"> 🔱 <span>Margaret Hamilton Academy</span></Link>
+                        <Link to="/"> 🔱 <span>Margaret Hamilton Academy</span></Link>
                     </h2>
                     </div>
                     <div className="title">

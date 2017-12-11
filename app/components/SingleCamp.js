@@ -28,10 +28,10 @@ export default class SingleCamp extends Component {
         .then(campus => this.setState({ campus }));
     }
 
-    // handleClick(){ //delete handle
+    // handleClick(event){ //delete handle
+    //     event.preventDefault();
     //     const campusId = this.props.match.params.campusId;
-        
-    //     axios.delete(`/api/campus/${campusId}`);
+    //     axios.delete(`/api/campus/${campusId}`, this.state.campus);
         
     // }
 
@@ -69,11 +69,11 @@ export default class SingleCamp extends Component {
         });
       }
 
-    updateCampus(newCampus){
+    updateCampus(newCampus){ // 2 things done at once. we update the new data in the db & setState to trigger auto-reload the page
         const campusId = this.props.match.params.campusId;
         axios.put(`/api/campus/${campusId}`, newCampus)
         .then(res => res.data)
-        .then(campus => this.setState({ campus }));
+        .then(campus => this.setState({ campus })); //the 'campus' come back from db is the newly updated data
     } 
 
 
@@ -117,11 +117,13 @@ export default class SingleCamp extends Component {
                             className="button1"
                             onClick={this.handleClick}
                             >Update</button>
-                            {/* <button
+                            
+                            <button
                             type="delete"
                             className="button2"
                             onClick={this.handleClick}
-                            >Delete</button> */}
+                            >Delete</button> 
+                            
                         </form>
                     </div>
                 </div>

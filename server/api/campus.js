@@ -52,7 +52,7 @@ apiRouter.put('/:id', (req,res,next)=>{
 apiRouter.delete('/:id', (req,res,next)=>{
 	req.campus.destroy()
 	.then(() => res.sendStatus(204))
-	// .then(() => res.redirect('/'))
+	//.then(() => res.redirect('/'))
 	.catch(next)
 })
 module.exports = apiRouter;

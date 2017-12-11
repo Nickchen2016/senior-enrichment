@@ -195,6 +195,25 @@ input[type=text]{
     border-radius: 8px;
 }
 
+.button3{
+    font-size:25px;
+    margin-left: 60px;
+    width:40px;
+    height: 40px;
+    color: white;
+    background-color:rgb(255, 81, 0);
+    border: none;
+    border-radius: 20px;
+}
+
 .stu-value {
     margin-left: 300px;
+}
+
+p {
+    font-size: 75px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 650px;
+    color: rgb(175, 175, 175)
 }
