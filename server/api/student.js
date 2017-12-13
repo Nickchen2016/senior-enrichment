@@ -18,7 +18,7 @@ apiRouter.get('/', (req,res,next)=>{
 apiRouter.param('id', (req,res,next,id)=>{
 	Student.findAll({
 		where:{id},
-		include:[{model:Campus}]
+	    include:[{model:Campus}]
 	})
 	.then(student => {
 		if(student) {
@@ -48,7 +48,7 @@ apiRouter.post('/', (req,res,next)=>{
 })
 
 apiRouter.put('/:id', (req,res,next)=>{
-	req.student.update(req.body)
+	req.student[0].update(req.body)
 	.then((result)=>{
 		res.send(result)
 	})

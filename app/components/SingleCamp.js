@@ -118,13 +118,15 @@ export default class SingleCamp extends Component {
                             onClick={this.handleClick}
                             >Update</button>
                             
-                            <button
+                        </form>
+                        <form onSubmit={this.handleClick}>
+                        <button
                             type="delete"
                             className="button2"
-                            onClick={this.handleClick}
-                            >Delete</button> 
                             
+                            >Delete</button> 
                         </form>
+                        
                     </div>
                 </div>
                 <div className="right">

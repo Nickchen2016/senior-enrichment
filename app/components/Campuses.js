@@ -62,7 +62,7 @@ handleSubmit(event){
 addCampus(newCampus){
     axios.post('/api/campus', newCampus)
     .then(res => res.data)
-    //.then(campus => this.setState({ campuses:[...this.state.campuses, campus] }));
+    .then(campus => this.setState({ campuses:[...this.state.campuses, campus] }));
 }
 
     render (){
