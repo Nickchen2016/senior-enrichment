@@ -65,7 +65,7 @@ export default class SingleStudent extends Component {
     }
 
     campusChange(event){
-        // {console.log('-------------',event.target.value)}
+         //{console.log('-------------',event.target.value)}
         this.setState({
             campusId: event.target.value
         })
@@ -79,7 +79,7 @@ export default class SingleStudent extends Component {
                         gpa: this.state.gpa,
                         campusId: this.state.campusId
                     })
-        
+    
         this.setState({
           firstName: '',
           lastName:'',
@@ -104,7 +104,7 @@ export default class SingleStudent extends Component {
         const student = this.state.student;
         const campus = this.state.student.campus;
         const campuses = this.state.campuses;
-         //console.log('----------',this.state.campuses)
+         console.log('----------',campuses)
 
         return (
 

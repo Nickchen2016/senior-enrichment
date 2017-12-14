@@ -114,6 +114,7 @@ export default class Students extends Component {
                { students && students.map(student=>{
                  return(
                      <div key={student.id}>
+                     
                     <Link to={`/students/${student.id}`}>
                     <div className="list-title-1" >
                         <div className="list-topic-1 stu2">{student.id}</div>

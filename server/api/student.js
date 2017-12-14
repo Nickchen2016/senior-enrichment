@@ -36,7 +36,7 @@ apiRouter.param('id', (req,res,next,id)=>{
 
 apiRouter.get('/:id', (req,res,next)=>{
 	
-		res.send(req.student);
+		res.send(req.student[0]);
 	})
 
 apiRouter.post('/', (req,res,next)=>{
